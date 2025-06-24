@@ -1,0 +1,41 @@
+.dashboard-page {
+    padding: 20px;
+}
+
+.kpi-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.kpi-card {
+    background: #f3f4f6;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 200px;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.charts-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.chart {
+    flex: 1;
+    min-width: 300px;
+}
+
+.low-stock,
+.recent-sales {
+    flex: 1;
+    min-width: 300px;
+}
+
+ul {
+    padding-left: 20px;
+}

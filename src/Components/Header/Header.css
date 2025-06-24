@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../assets/Poppins-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Poppins';
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    background-color: #1e293b;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 10px;
+    background-color: antiquewhite;
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: 600;
+}

@@ -1,0 +1,33 @@
+.inventory-page {
+    padding: 20px;
+}
+
+.inventory-summary {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.inventory-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inventory-filters input,
+.inventory-filters select {
+    padding: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
