@@ -12,6 +12,7 @@ const Login = () => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
+            Navigate('/billform');
         } catch (err) {
             alert('Invalid credentials');
         }
