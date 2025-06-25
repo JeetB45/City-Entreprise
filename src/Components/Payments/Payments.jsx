@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAllSales } from '../../services/paymentService';
+// import { getAllSales } from '../../services/paymentService';
 import './Payments.css';
 
 const Payments = () => {
@@ -55,7 +55,7 @@ const Payments = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {sales.map(s => (
+                    {payments.map(s => (
                         <tr key={s.id}>
                             <td>{s.date}</td>
                             <td>{s.customer}</td>
