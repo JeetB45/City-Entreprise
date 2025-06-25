@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 import './Login.css';
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -11,6 +12,7 @@ const Login = () => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
+            Navigate('/billform')
         } catch (err) {
             alert('Invalid credentials');
         }
