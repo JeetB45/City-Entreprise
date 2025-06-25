@@ -3,7 +3,7 @@ import './Navbar.css';
 import { useAuth } from '../../AuthContext.jsx';
 
 const Navbar = () => {
-    const { logout } = useAuth();
+    const { user, logout } = useAuth();
 
     return (
         <nav className="navbar">
@@ -13,7 +13,9 @@ const Navbar = () => {
             <NavLink to="/inventory">Inventory</NavLink>
             <NavLink to="/sales">Sales</NavLink>
             <NavLink to="/payments">Payments</NavLink>
-            <button onClick={logout} className="logout-btn">Logout</button>
+            {user && (
+                <button onClick={logout} className="logout-btn">Logout</button>
+            )}
         </nav>
     );
 };
