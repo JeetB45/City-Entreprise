@@ -3,21 +3,25 @@ import { getAllSales } from '../../services/salesService';
 import './Payments.css';
 
 const Payments = () => {
-    const [sales, setSales] = useState([]);
+    const [payments, setPayments] = useState([]);
 
     useEffect(() => {
-        (async () => setSales(await getAllSales()))();
+        (async () => {
+            const all = await getAllPayments();
+            setPayments(all);
+        })();
     }, []);
 
     const today = new Date().toISOString().split('T')[0];
-    const totalRevenue = sales.reduce((acc, s) => acc + s.amount, 0);
-    const todaysRevenue = sales
-        .filter(s => s.date === today)
-        .reduce((acc, s) => acc + s.amount, 0);
 
-    const modes = sales.reduce((acc, s) => {
-        const mode = s.paymentMode || 'Other';
-        acc[mode] = (acc[mode] || 0) + s.amount;
+    const totalRevenue = payments.reduce((acc, p) => acc + p.amount, 0);
+    const todaysRevenue = payments
+        .filter(p => p.date === today)
+        .reduce((acc, p) => acc + p.amount, 0);
+
+    const modes = payments.reduce((acc, p) => {
+        const mode = p.paymentMode || 'Other';
+        acc[mode] = (acc[mode] || 0) + p.amount;
         return acc;
     }, {});
 
