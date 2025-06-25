@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAllSales } from '../../services/salesService';
+import { getAllSales } from '../../services/paymentService';
 import './Payments.css';
 
 const Payments = () => {
