@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import { getAllSales } from '../../services/paymentService';
+import { getAllPayments } from '../../services/paymentService'; // ⬅️ updated
 import './Payments.css';
 
 const Payments = () => {
@@ -43,30 +43,24 @@ const Payments = () => {
             </div>
 
             <h3>Payment Records</h3>
-            <table>
+            <table className="payments-table">
                 <thead>
                     <tr>
                         <th>Date</th>
                         <th>Customer</th>
-                        <th>Items</th>
                         <th>Amount</th>
                         <th>Mode</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {payments.map(s => (
-                        <tr key={s.id}>
-                            <td>{s.date}</td>
-                            <td>{s.customer}</td>
-                            <td>
-                                {s.items.map((item, i) => (
-                                    <div key={i}>{item.product} × {item.quantity}</div>
-                                ))}
-                            </td>
-                            <td>₹{s.amount}</td>
-                            <td>{s.paymentMode}</td>
-                            <td>{s.amount >= 0 ? 'Paid' : 'Pending'}</td>
+                    {payments.map(p => (
+                        <tr key={p.id}>
+                            <td>{p.date}</td>
+                            <td>{p.customer}</td>
+                            <td>₹{p.amount}</td>
+                            <td>{p.paymentMode}</td>
+                            <td>{p.amount >= 0 ? 'Paid' : 'Pending'}</td>
                         </tr>
                     ))}
                 </tbody>
